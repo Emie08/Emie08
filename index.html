@@ -1,0 +1,221 @@
+restaurant-website/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── README.md
+├── LICENSE
+└── .gitignore
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Gourmet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Restaurant Gourmet</h1>
+            <nav>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+                <a href="#avis">Avis</a>
+                <a href="#paiement">Paiement</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Menu -->
+        <section id="menu">
+            <div class="container">
+                <h2>Notre Menu</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <h3>Entrée</h3>
+                        <p>Salade César - 5€</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Plat principal</h3>
+                        <p>Filet mignon - 15€</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Dessert</h3>
+                        <p>Fondant au chocolat - 7€</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact">
+            <div class="container">
+                <h2>Contactez-nous</h2>
+                <p><strong>Téléphone :</strong> +261 32 00 000 00</p>
+                <p><strong>Email :</strong> contact@restaurantgourmet.com</p>
+                <p><strong>Adresse :</strong> Avenue de la Gastronomie, Antananarivo</p>
+            </div>
+        </section>
+
+        <!-- Section Avis -->
+        <section id="avis">
+            <div class="container">
+                <h2>Vos Avis</h2>
+                <form onsubmit="envoyerAvis(event)">
+                    <textarea id="avis-text" rows="4" placeholder="Laissez votre avis ici..." required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+                <div id="avis-liste"></div>
+            </div>
+        </section>
+
+        <!-- Section Paiement -->
+        <section id="paiement">
+            <div class="container">
+                <h2>Payer avec Orange Money</h2>
+                <p>Procédez au paiement en toute sécurité :</p>
+                <button onclick="simulerPaiement()">Procéder au paiement</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Restaurant Gourmet - Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+// Fonction pour envoyer un avis
+function envoyerAvis(event) {
+    event.preventDefault();
+    const avisText = document.getElementById("avis-text").value;
+    const avisListe = document.getElementById("avis-liste");
+    const avisElement = document.createElement("p");
+    avisElement.textContent = avisText;
+    avisListe.appendChild(avisElement);
+    document.getElementById("avis-text").value = ""; // Réinitialise le champ
+    alert("Merci pour votre avis !");
+}
+
+// Fonction pour simuler le paiement
+function simulerPaiement() {
+    alert("Redirection vers le paiement Orange Money...");
+    // Ajouter l'intégration d'API réelle ici
+}
+# Restaurant Gourmet
+
+Ce projet est un site web pour le **Restaurant Gourmet**, incluant un menu, des informations de contact, une section avis, et un bouton de paiement via Orange Money.
+
+## Contenu
+
+- `index.html` : Page principale.
+- `css/style.css` : Fichier de styles.
+- `js/script.js` : Script JavaScript pour les interactions.
+- `LICENSE` : Licence MIT.
+- `.gitignore` : Fichiers ignorés.
+
+## Utilisation
+
+1. Clone ce dépôt :
+   ```bash
+   git clone https://github.com/username/restaurant-website.git
+---
+
+### 5. **Fichier `LICENSE`**
+
+Licence MIT pour permettre l'utilisation libre.
+
+```text
+MIT License
+
+Copyright (c) 2024
+
+Permission is hereby granted...
+# Fichiers inutiles
+.DS_Store
+node_modules/
+.env
+log/
